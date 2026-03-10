@@ -302,7 +302,7 @@ def plot_analytical_displacement(
         plt.close()
 
 
-def plot_relative_stress_error_side_by_side(
+def plot_relative_stress_error(
     x_updated,
     y_updated,
     rel_error_sigxx,

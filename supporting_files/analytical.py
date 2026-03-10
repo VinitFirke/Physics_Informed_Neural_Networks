@@ -1,5 +1,4 @@
-import numpy as np
-
+from libraries import *
 def displacement_exact_analytical_solution(x, y, L, F=0.01, E=1.0, mu=0.3, h=1.0):
     I = (h**3) / 12
     D_1 = (F * y) / (6 * E * I)

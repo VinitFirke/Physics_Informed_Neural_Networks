@@ -2,7 +2,7 @@ from analytical import (
     displacement_exact_analytical_solution,
     stress_exact_analytical_solution,
 )
-import numpy as np
+from libraries import *
 
 def evaluate_model(model, inputs, x, y, L, h, E, mu):
     prediction = model.predict_fields(inputs)
@@ -13,9 +13,7 @@ def evaluate_model(model, inputs, x, y, L, h, E, mu):
     return prediction, exact_sigma, exact_disp
 
 def compute_stress_errors(x, y, stress_xx, stress_yy, stress_xy, L):
-    """
-    Compute exact analytical stresses and absolute stress errors.
-    """
+
 
     exact_sigma = stress_exact_analytical_solution(x=x, y=y, L=L)
 
@@ -42,9 +40,6 @@ def compute_stress_errors(x, y, stress_xx, stress_yy, stress_xy, L):
 
 
 def compute_exact_displacement(x, y, L):
-    """
-    Compute exact analytical displacement field.
-    """
     disp_dict = displacement_exact_analytical_solution(x=x, y=y, L=L)
 
     dx = np.asarray(disp_dict["dispx"])
@@ -56,10 +51,6 @@ def compute_exact_displacement(x, y, L):
     }
 
 
-
-import numpy as np
-
-
 def compute_relative_stress_errors(
     stress_xx,
     stress_yy,
@@ -69,13 +60,7 @@ def compute_relative_stress_errors(
     exact_sigxy,
     eps=1e-12,
 ):
-    """
-    Compute relative stress errors safely.
-
-    Relative error = (predicted - exact) / exact
-
-    If |exact| <= eps, relative error is set to NaN to avoid division by zero.
-    """
+    
 
     stress_xx = np.asarray(stress_xx, dtype=float)
     stress_yy = np.asarray(stress_yy, dtype=float)
