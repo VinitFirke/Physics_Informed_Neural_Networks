@@ -4,3 +4,4 @@ import tensorflow_probability as tfp
 import matplotlib.pyplot as plt
 from shapely.geometry import Point, Polygon
 import time
+import os
