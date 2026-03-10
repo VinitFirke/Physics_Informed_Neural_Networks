@@ -1,5 +1,5 @@
 
-from libraries import *
+from .libraries import *
 
 def function_factory(lbfgs_model, train_x):
         shapes = tf.shape_n(lbfgs_model.trainable_variables)

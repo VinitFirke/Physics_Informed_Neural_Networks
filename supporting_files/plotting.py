@@ -1,7 +1,7 @@
-from libraries import *
+from .libraries import *
 def plot_loss(loss_total, 
     save_dir = "figures",
-    filename = "PINN_stress_components.png"
+    filename = "PINN_loss.png"
     ):
     os.makedirs(save_dir, exist_ok=True)
     plt.figure()

@@ -1,8 +1,8 @@
-from analytical import (
+from .analytical import (
     displacement_exact_analytical_solution,
     stress_exact_analytical_solution,
 )
-from libraries import *
+from .libraries import *
 
 def evaluate_model(model, inputs, x, y, L, h, E, mu):
     prediction = model.predict_fields(inputs)

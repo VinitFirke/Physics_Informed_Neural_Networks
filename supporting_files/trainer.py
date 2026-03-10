@@ -1,5 +1,5 @@
-from libraries import *
-from lbfgs import function_factory
+from .libraries import *
+from .lbfgs import function_factory
 
 def lr_scheduler(epoch, lr):
     if epoch % 200 == 0 and epoch != 0:

@@ -4,7 +4,7 @@
 
 ################################################################
 
-from libraries import *
+from .libraries import *
 class PINN(tf.keras.Model):
     def __init__(
         self,
@@ -44,7 +44,7 @@ class PINN(tf.keras.Model):
 
         self.L = L
 
-        self.build(input_shape=2)
+        self.build(input_shape=(2,)) #changed from 2 to tuple (2,) expecting x and y
 
     def build(self, input_shape):
         # Building the ANN
