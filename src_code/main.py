@@ -89,12 +89,12 @@ def main():
     # ------------------------------------------------------------------
     # Sampling / training parameters
     # ------------------------------------------------------------------
-    n_inner = 2500
-    n_edge = 250
+    n_inner = 1000
+    n_edge = 200
 
     adam_lr = 1e-2
-    adam_epochs = 5000
-    lbfgs_max_iterations = 20000
+    adam_epochs = 100
+    lbfgs_max_iterations = 500
 
     # ------------------------------------------------------------------
     # Output folder
@@ -226,7 +226,7 @@ def main():
     # Plotting
     # ------------------------------------------------------------------
     plot_loss(loss_total=loss_total, save_dir=save_dir)
-    
+
     plot_pinn_displacement(
         x_updated=x_updated,
         y_updated=y_updated,
